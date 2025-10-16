@@ -1,0 +1,3 @@
+#!/usr/bin/python3
+import sys  # sysモジュールを読み込み
+print(sys.argv)

@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+import sys
+
+minus, zero, plus = 0, 0, 0
+
+for n in sys.argv[1:]:
+    x = float(n)
+    if x < 0.0:
+        #minus += 1
+        print("負の値")
+    elif x > 0.0:
+        #plus += 1
+        print("正の値")
+    else:
+        #zero += 1
+        print("0")
+
+#print("minus:",minus)
+#print("zero:",zero)
+#print("plus:",plus)
