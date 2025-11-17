@@ -6,21 +6,21 @@
 [![distance](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml)
 
 ## 実験環境
-　* Ubuntu-22.04
-　* インターネットにつながる環境
+- Ubuntu-22.04
+- インターネットにつながる環境
 
 ## 使用ソフト
-　* Python (3.8~.12までテストにより動作確認済み)
+- Python (3.8~.12までテストにより動作確認済み)
 
 ## 課題プログラム：distance 使用方法
- * 下記コマンドを使用しリポジトリのクローンを作成する。
+### リポジトリのクローン
 
 ```shell
 $ git clone https://github.com/leo0607y/robosys2025.git
 $ cd robosys2025
 ```
 
- * セットアップ
+### セットアップ
     仮想環境を構築し有効化する。必要ライブラリをインストールする。
 ```shell
 $ python3 -m venv venv
@@ -29,7 +29,7 @@ $ pip install geopy
 $ chmod +x distance #初回のみ必須
 ```
 
- * 使用方法
+### 使用方法
 ```shell
 $ ./distance
 ```
