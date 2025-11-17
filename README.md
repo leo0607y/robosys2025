@@ -2,12 +2,10 @@
 ロボットシステム学の授業内容＆課題１
 =====
 
-- plus
+- plus [![test](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml)
     - 1から入力された正の整数までの合計値を計算し出力するコマンド
-- distance
+- distance [![distance](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml)
     - 都市間（都市でなくても駅になってる地名位までならいける）の距離が気になって仕方なくなったら使えるコマンド
-[![test](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml)
-[![distance](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml)
 
 ## 実験環境
 - Ubuntu-22.04
