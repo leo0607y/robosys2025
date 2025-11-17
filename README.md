@@ -7,6 +7,10 @@
 
 ## 実験環境
 　* Ubuntu-22.04
+　* インターネットにつながる環境
+
+## 使用ソフト
+　* Python (3.8~.12までテストにより動作確認済み)
 
 ## 課題プログラム：distance 使用方法
  * 下記コマンドを使用しリポジトリのクローンを作成する。
@@ -37,5 +41,6 @@ $ ./distance
 - このパッケージは、上田隆一由来のコード(© 2025 Ryuichi Ueda)を利用しています.
 - このパッケージのコードは、下記のスライド(CC-BY-SA 4.0 by Ryuichi Ueda)のものを,本人の許可を得て自身の著作としたものです.
     - [ryuichiueda/slides_marp/tree/master/robosys2025](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
+- このソフトウェアは、サードパーティ製のライブラリとして **[geopy](https://github.com/geopy/geopy)** を利用しています。geopyは **[MIT License](https://github.com/geopy/geopy/blob/master/LICENSE)** の下でライセンスされています。
 - © 2025 Reo Yamaguchi
 
