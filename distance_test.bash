@@ -28,7 +28,7 @@ Nothingness_city=""
 out=$(printf "%s\nurayasu\n" "${Nothingness_city}" | ./distance)
 
 [ "$?" = 1 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -c "Not found ${Nothingness_city}")" = 1 ] || ng "$LINENO"
+[ "$(echo "${out}" | grep -E -c "Not found ${Nothingness_city}|Error")" = 1 ] || ng "$LINENO"
 
 #最終評価
 [ "${res}" = 0 ] && echo OK
