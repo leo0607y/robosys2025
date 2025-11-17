@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+#SPDX-FileCopyrightText: 2025 Reo Yamaguchi reo.yamaguchi0607@gmail.com
+#SPDX-License-Identifier: BSD-3-Clause
+
+from geopy.geocoders import Nominatim
+from geopy.distance import great_circle
+
+try:
+    geolocator = Nominatim(user_agent="my_distance_calculator")
+except Exception as e:
+    print(f"Error")
+    exit() 
+
+print("都市名（英語orローマ字）")
+city1 = input("START: ")
+city2 = input("GOAL: ")
+
+try:
+    location1 = geolocator.geocode(city1)
+    location2 = geolocator.geocode(city2)
+except Exception as e:
+    print("Error")
+    exit()
+
+if location1 is None:
+    print(f"Not found {city1}")
+    exit() 
+if location2 is None:
+    print(f"Not found {city2}")
+    exit() 
+
+coords1 = (location1.latitude, location1.longitude)
+coords2 = (location2.latitude, location2.longitude)
+
+distance_km = great_circle(coords1, coords2).km
+distance_mile = great_circle(coords1, coords2).miles
+
+print(f"{city1}({location1.latitude},{location1.longitude}),{city2}({location2.latitude}, {location2.longitude})間の直線距離")
+print(f" 約 {distance_km:.2f} km")
+print(f" 約 {distance_mile:.2f} mile")
