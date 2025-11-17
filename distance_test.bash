@@ -7,28 +7,28 @@ ng (){
 	res=1
 }
 
-res = 0
+res=0
 
 #正常
-out = $(printf"Tokyo\nNY\n" | ./distance)
+out=$(printf "Tokyo\nNY\n" | ./distance)
 
-[ "$?"=0 ] || ng "$LINENO"
+[ "$?" = 0 ] || ng "$LINENO"
 [ "$(echo "${out}" | grep -c "km")" = 1 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -c "km")" = 1 ] || ng "$LINENO"
+[ "$(echo "${out}" | grep -c "mile")" = 1 ] || ng "$LINENO"
 
 #エラー　実在しない
 Error_city="takiase"
-out=$(printf "Tokyo\n%s\n" "${CITY_INVALID}" | ./distance)
+out=$(printf "Tokyo\n%s\n" "${Error_city}" | ./distance)
 
 [ "$?" = 1 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -c "Not found ${CITY_INVALID}")" = 1 ] || ng "$LINENO"
+[ "$(echo "${out}" | grep -c "Not found ${Error_city}")" = 1 ] || ng "$LINENO"
 
 #エラー　入力無し
 Nothingness_city=""
-out=$(printf "%s\nurayasu\n" "${CITY_EMPTY}" | ./distance)
+out=$(printf "%s\nurayasu\n" "${Nothingness_city}" | ./distance)
 
 [ "$?" = 1 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -c "Not found ${CITY_EMPTY}")" = 1 ] || ng "$LINENO"
+[ "$(echo "${out}" | grep -c "Not found ${Nothingness_city}")" = 1 ] || ng "$LINENO"
 
 #最終評価
 [ "${res}" = 0 ] && echo OK
