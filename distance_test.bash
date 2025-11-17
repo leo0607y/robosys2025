@@ -3,7 +3,7 @@
 #SPDX-License-Identifier: BSD-3-Clause
 
 ng (){
-	echo "❌ ${1}行目でテストが失敗しました"
+	echo " ${1}行目で失敗"
 	res=1
 }
 
