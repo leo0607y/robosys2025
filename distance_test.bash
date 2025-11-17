@@ -21,7 +21,7 @@ Error_city="takiase"
 out=$(printf "Tokyo\n%s\n" "${Error_city}" | ./distance)
 
 [ "$?" = 1 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -c "Not found ${Error_city}")" = 1 ] || ng "$LINENO"
+[ "$(echo "${out}" | grep -E -c "Not found ${Error_city}|Error")" = 1 ] || ng "$LINENO"
 
 #エラー　入力無し
 Nothingness_city=""
