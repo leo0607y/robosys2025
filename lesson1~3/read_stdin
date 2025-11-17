@@ -1,7 +1,0 @@
-#!/usr/bin/python3
-
-import sys
-
-for line in sys.stdin:
-    word = line.strip() #最後に改行文字が入っているのでstripメソッドで除去
-    print(word + " を標準入力から読んだよ")
