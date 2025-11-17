@@ -1,8 +1,22 @@
 # robosys2025
-ロボットシステム学の授業まとめ
+ロボットシステム学の授業内容＆課題１
 =====
 
 [![test](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml)
+
+
+##実験環境
+　*Ubuntu-22.04
+
+##使用方法
+下記コマンドを使用しリポジトリのクローンを作成する。
+
+'''shell
+$ git clone https://github.com/leo0607y/robosys2025.git
+$ cd robosys2025
+'''
+
+
 
 
 - このソフトウェアパッケージは、３条項BSDライセンスの下、再頒布及び仕様が許可されます。
