@@ -37,4 +37,4 @@ distance_mile = great_circle(coords1, coords2).miles
 
 print(f"{city1}({location1.latitude},{location1.longitude}),{city2}({location2.latitude}, {location2.longitude})間の直線距離")
 print(f" 約 {distance_km:.2f} km")
-print(f" 約 {distance_mile:.2f} mile")
+print(f" 約 {distance_mile:.2f} miles")
