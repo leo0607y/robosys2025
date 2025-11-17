@@ -3,7 +3,7 @@
 =====
 
 [![test](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml)
-
+[![distance](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml)
 
 ## 実験環境
 　* Ubuntu-22.04
