@@ -12,7 +12,7 @@
 ## 使用ソフト
 - Python (3.8~.12までテストにより動作確認済み)
 
-## 課題プログラム：distance 使用方法
+## 使用方法
 ### リポジトリのクローン
 
 ```shell
@@ -28,8 +28,14 @@ $ source venv/bin/activate
 $ pip install geopy
 $ chmod +x distance #初回のみ必須
 ```
+### plus:使用方法
+```shell
+$ seq 10 | ./plus
+```
+- １から入力された正の整数までの合計を出力。
+- 今回は、1+2+3+4+5+6+7+8+9+10 = 55
 
-### 使用方法
+### distance:使用方法
 ```shell
 $ ./distance
 ```
