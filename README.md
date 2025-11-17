@@ -19,18 +19,18 @@ $ cd robosys2025
  * セットアップ
     仮想環境を構築し有効化する。必要ライブラリをインストールする。
 ```shell
-python3 -m venv venv
-source venv/bin/activate
-pip install geopy
-chmod +x distance #初回のみ必須
+$ python3 -m venv venv
+$ source venv/bin/activate
+$ pip install geopy
+$ chmod +x distance #初回のみ必須
 ```
 
  * 使用方法
 ```shell
-./distance
+$ ./distance
 ```
- ・START：と表示されるので英語またはローマ字で日本の地名を入力。
- ・GOAL:と表示されるので同様に入力。入力された内容に基づいて緯度経度を計算し、直線距離をkm及びmilesで表示する。
+    * START：と表示されるので英語またはローマ字で日本の地名を入力
+    * GOAL:と表示されるので同様に入力。入力された内容に基づいて緯度経度を計算し、直線距離をkm及びmilesで表示する。
 
 
 - このソフトウェアパッケージは、３条項BSDライセンスの下、再頒布及び仕様が許可されます。
