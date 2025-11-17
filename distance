@@ -9,7 +9,7 @@ try:
     geolocator = Nominatim(user_agent="my_distance_calculator")
 except Exception as e:
     print(f"Error")
-    exit() 
+    exit(1) 
 
 print("都市名（英語orローマ字）")
 city1 = input("START: ")
@@ -20,14 +20,14 @@ try:
     location2 = geolocator.geocode(city2)
 except Exception as e:
     print("Error")
-    exit()
+    exit(1)
 
 if location1 is None:
     print(f"Not found {city1}")
-    exit() 
+    exit(1) 
 if location2 is None:
     print(f"Not found {city2}")
-    exit() 
+    exit(1) 
 
 coords1 = (location1.latitude, location1.longitude)
 coords2 = (location2.latitude, location2.longitude)
