@@ -1,9 +1,6 @@
 # robosys2025
 ロボットシステム学の授業内容＆課題１
 =====
-
-- plus [![test](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/test.yml)
-    - 1から入力された正の整数までの合計値を計算し出力するコマンド
 - distance [![distance](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml)
     - 都市間（都市でなくても駅になってる地名位までならいける）の距離が気になって仕方なくなったら使えるコマンド
 
@@ -30,13 +27,6 @@ $ source venv/bin/activate
 $ pip install geopy
 $ chmod +x distance #初回のみ必須
 ```
-### plus:使用方法
-```shell
-$ seq 10 | ./plus
-```
-- １から入力された正の整数までの合計を出力。
-- 今回は、1+2+3+4+5+6+7+8+9+10 = 55
-
 ### distance:使用方法
 ```shell
 $ ./distance
