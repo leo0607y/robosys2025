@@ -1,5 +1,4 @@
-# robosys2025
-都市間距離計測コマンド
+# 都市間距離計測コマンド
 =====
 - distance [![distance](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml/badge.svg)](https://github.com/leo0607y/robosys2025/actions/workflows/distance.yml)
     - 都市間（都市でなくても駅になってる地名位までならいける）の距離が気になって仕方なくなったら使えるコマンド
@@ -28,19 +27,19 @@ $ pip install geopy
 $ chmod +x distance #初回のみ必須
 ```
 ### distance:使用方法
-```shell
-$ ./distance
-```
-- START：と表示されるので英語またはローマ字で日本の地名を入力
-- GOAL:と表示されるので同様に入力。
-- 入力された内容に基づいて緯度経度を表示し、直線距離を計算。
-- km及びmilesで表示する。
 
-### 使用例
+地名を"/"で区切って入力。
+出力の１行目には地名間の直線距離[km]が、同様に２行目には[mile]で表示。
 ```shell
-$ ./distance
+$ echo "地名１/地名２" | ./distance
 
+#入出力例
+$ echo "tokyo/osaka" | ./distance
+
+402.39
+250.03
 ```
+
 
 ## 著作及びライセンス
 - このソフトウェアパッケージは、３条項BSDライセンスの下、再頒布及び仕様が許可されます。
