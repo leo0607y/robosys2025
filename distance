@@ -2,39 +2,43 @@
 #SPDX-FileCopyrightText: 2025 Reo Yamaguchi reo.yamaguchi0607@gmail.com
 #SPDX-License-Identifier: BSD-3-Clause
 
+import sys
 from geopy.geocoders import Nominatim
 from geopy.distance import great_circle
+def main():
+    line = sys.stdin.readline().strip()
+    if not line:
+        sys.exit(1)
 
-try:
-    geolocator = Nominatim(user_agent="my_distance_calculator")
-except Exception as e:
-    print(f"Error")
-    exit(1) 
+    try:
+        cities = [c.strip() for c in line.split('/')]
+        #スラッシュで区切られなかった際に終了
+        if len(cities) < 2:
+           sys.exit(1)
+        
+        city1, city2 = cities[0], cities[1]
 
-print("都市名（英語orローマ字）")
-city1 = input("START: ")
-city2 = input("GOAL: ")
+        geolocator = Nominatim(user_agent="my_distance_calculator")
+        
+        location1 = geolocator.geocode(city1)
+        location2 = geolocator.geocode(city2)
+        #地名検索失敗時
+        if not location1 or not location2:
+            sys.exit(1)
 
-try:
-    location1 = geolocator.geocode(city1)
-    location2 = geolocator.geocode(city2)
-except Exception as e:
-    print("Error")
-    exit(1)
+        coords1 = (location1.latitude, location1.longitude)
+        coords2 = (location2.latitude, location2.longitude)
 
-if location1 is None:
-    print(f"Not found {city1}")
-    exit(1) 
-if location2 is None:
-    print(f"Not found {city2}")
-    exit(1) 
+        # 距離計算
+        distance_km = great_circle(coords1, coords2).km
+        distance_mile = great_circle(coords1, coords2).miles
 
-coords1 = (location1.latitude, location1.longitude)
-coords2 = (location2.latitude, location2.longitude)
+        print(f"{distance_km:.2f}")
+        print(f"{distance_mile:.2f}")
+        
+        #ネット環境がないなど予期せぬエラー時の処理
+    except Exception:
+        sys.exit(1)
 
-distance_km = great_circle(coords1, coords2).km
-distance_mile = great_circle(coords1, coords2).miles
-
-print(f"{city1}({location1.latitude},{location1.longitude}),{city2}({location2.latitude}, {location2.longitude})間の直線距離")
-print(f" 約 {distance_km:.2f} km")
-print(f" 約 {distance_mile:.2f} miles")
+if __name__ == "__main__":
+    main()
