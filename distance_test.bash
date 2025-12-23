@@ -3,34 +3,33 @@
 #SPDX-License-Identifier: BSD-3-Clause
 
 ng (){
-	echo " ${1}行目で失敗"
-	res=1
+    echo "${1}行目で失敗"
+    res=1
 }
 
 res=0
 
-#正常
-out=$(printf "Tokyo\nNY\n" | ./distance)
-
+### 通常動作 ###
+# スラッシュ区切り入力、終了ステータス＝０
+out=$(echo "Tokyo/Osaka" | ./distance)
 [ "$?" = 0 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -c "km")" = 1 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -c "mile")" = 1 ] || ng "$LINENO"
 
-#エラー　実在しない
-Error_city="takiase"
-out=$(printf "Tokyo\n%s\n" "${Error_city}" | ./distance)
+# 出力確認
+line_count=$(echo "${out}" | wc -l)
+[ "${line_count}" = 2 ] || ng "$LINENO"
 
+# 出力が数値かを確認
+echo "${out}" | head -n 1 | grep -qE '^[0-9.]+$' || ng "$LINENO"
+
+### 実在しない地名 ###
+echo "kitagami/takiase" | ./distance
 [ "$?" = 1 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -E -c "Not found ${Error_city}|Error")" = 1 ] || ng "$LINENO"
 
-#エラー　入力無し
-Nothingness_city=""
-out=$(printf "%s\nurayasu\n" "${Nothingness_city}" | ./distance)
-
+### スラッシュなし ###
+echo "Tokyo Osaka" | ./distance
 [ "$?" = 1 ] || ng "$LINENO"
-[ "$(echo "${out}" | grep -E -c "Not found ${Nothingness_city}|Error")" = 1 ] || ng "$LINENO"
 
-#最終評価
+# 最終評価
 [ "${res}" = 0 ] && echo OK
 
 exit $res
